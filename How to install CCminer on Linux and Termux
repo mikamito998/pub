@@ -1,0 +1,47 @@
+Installation instructions:
+==========================
+apt-get update -y && apt-get upgrade -y
+
+apt-get install git
+
+apt-get install nano
+
+apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential
+
+    # Choose one between ARM and verus 2.2:
+    • ARM (for 64 bit ARM chips with intrinsic AES):
+    git clone --single-branch -b ARM https://github.com/monkins1010/ccminer.git
+    • Verus 2.2 (standard x86-64 pc):
+    git clone --single-branch -b --single-branch Verus2.2 https://github.com/monkins1010/ccminer.git
+
+cd ccminer
+
+chmod +x build.sh
+chmod +x configure.sh
+chmod +x autogen.sh
+
+./build.sh
+
+    # Create an run file to run miner without having to retype the script:
+    nano run
+
+    # copy and paste the code below then save it with the file name run:
+    ./ccminer -a verus -o stratum+tcp://ap.luckpool.net:3956 -u YourVRSCWalletAddress.WorkerName -p x -t 8
+
+    # Run miner by simply typing:
+    ./run
+
+    Config Mining Pool:
+    ===================
+    • Verus Pool
+    ./ccminer -a verus -o stratum+tcp://pool.veruscoin.io:9999 -u RWnCpZC7Vqp9FJbvFxzhp5zuyPECw8Byvj.WorkerName -p d=4 -t 8
+    • Luckpool:
+    1.) ./ccminer -a verus -o stratum+tcp://ap.luckpool.net:3956 -u RWnCpZC7Vqp9FJbvFxzhp5zuyPECw8Byvj.WorkerName -p x -t 8
+    2.) ./ccminer -a verus -o stratum+tcp://na.luckpool.net:3956 -u RSY8PFzoLE13bv3xQ92XCnUXarfgEdsR6k.WorkerName -p hybrid -t 8
+    3.) ./ccminer -a verus -o stratum+tcp://eu.luckpool.net:3956 -u RWnCpZC7Vqp9FJbvFxzhp5zuyPECw8Byvj.WorkerName -p hybrid -t 8
+    • Zergpool:
+    ./ccminer -a verus -o stratum+tcp://verushash.asia.mine.zergpool.com:3300 -u RWnCpZC7Vqp9FJbvFxzhp5zuyPECw8Byvj.WorkerName -p c=VRSC,mc=VRSC,m=solo,ID=WorkerName -t 8
+    • Mine VRSC coins with automatic exchange to other payment addresses with Zergpool. For example, if you are mining on VRSC, it will be automatically converted to BTC directly into your BTC wallet:
+    1.) ./ccminer -a verus -o stratum+tcp://verushash.na.mine.zergpool.com:3300 -u D6jDtSeRYJG6XVJPvCjRiF5xJ7MJ9dNX5p.WorkerName -p c=DOGE,mc=VRSC,ID=WorkerName -t 8
+    2.) ./ccminer -a verus -o stratum+tcp://verushash.eu.mine.zergpool.com:3300 -u YourXMRWalletAddress.WorkerName -p c=XMR,mc=VRSC,ID=WorkerName -t 8
+    • Change c=DOGE with the coin you want to exchange. For example c=XMR, c=BTC, etc. Only for tradeable coins, for further explanation visit the zergpool site.

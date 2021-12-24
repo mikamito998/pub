@@ -1,0 +1,8 @@
+Open Termux then copy and paste the code below:
+===============================================
+apt-get update -y && apt-get upgrade -y
+apt-get install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh && bash ubuntu.sh
+
+Command to start Ubuntu:
+========================
+./start-ubuntu.sh
