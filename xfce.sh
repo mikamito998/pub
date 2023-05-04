@@ -33,10 +33,6 @@ echo "Install XFCE"
 echo ""
 wget https://raw.githubusercontent.com/wahasa/Ubuntu/main/Desktop/de-xfce.sh ; chmod +x de-xfce.sh ; ./de-xfce.sh
 
-echo ""
-echo "Install Ubuntu Modded"
-echo ""
-wget https://raw.githubusercontent.com/wahasa/Ubuntu/main/modded/de-ubuntu.sh ; chmod +x de-ubuntu.sh ; ./de-ubuntu.sh
 
 echo ""
 echo "Install Windows 11 Theme"
