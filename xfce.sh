@@ -35,6 +35,6 @@ wget https://raw.githubusercontent.com/wahasa/Ubuntu/main/Desktop/de-xfce.sh ; c
 
 
 echo ""
-echo "Install Windows 11 Theme"
+echo "Install Windows 10 Theme"
 echo ""
-wget https://raw.githubusercontent.com/wahasa/Ubuntu/main/modded/Windows/win11.sh ; chmod +x win11.sh ; ./win11.sh
+wget https://raw.githubusercontent.com/wahasa/Ubuntu/main/modded/Windows/win10.sh ; chmod +x win10.sh ; ./win10.sh
